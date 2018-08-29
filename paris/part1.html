@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta property="og:title" content="Paris is not enough">
+    <meta property="og:description" content="Why uncertainty underpins the case for faster action">
+    <meta property="og:image" content="https://hackingclimate.github.io/paris/images/greenland_sea_ice.jpg">
+    <meta property="og:url" content="https://hackingclimate.github.io/paris/part1.html">
+    <meta name="twitter:title" content="Paris is not enough">
+    <meta name="twitter:description" content="Why uncertainty underpins the case for faster action">
+    <meta name="twitter:image" content="https://hackingclimate.github.io/paris/images/greenland_sea_ice.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="paris.css"/>
+    <title>Embracing the Precautionary Principle</title>
+    <script src="d3v4+jetpack.js"></script>
+    <script src="https://rawgit.com/susielu/d3-annotation/master/d3-annotation.min.js"></script>
+    <script src="graph-scroll-2.js"></script>
+    <script src="appear.js"></script>
+    <script src="chaos.js"></script>
+    <script src="notes.js"></script>
+    <script src="sketch-compressed.js"></script>
+  </head>
+  <body onload="draw()">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-92960719-7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-92960719-7');
+    </script>
+    <div class="container-1">
+      <div id="graph">
+	<img class="intro-image" id="greenland-sea-ice" src="images/greenland_sea_ice_thumbnail.jpg"/>
+      </div>
+      <div id="sections">
+	<div id="section0" class="image-text">
+	  
+	</div>
+	
+	<div id="section1" class="image-text">
+	  Ice in the Greenland sea, shown here in 2015, is on the retreat.
+	</div>
+
+	<div id="section2" class="image-text">
+	  Large chunks of melting sea ice can be seen off the coast.
+	</div>
+
+	<div id="section3" class="image-text">
+	  To the south spirals of ice have been shaped by the winds and currents that move across the Greenland Sea.
+	</div>
+
+	<div id="section4" class="image-text">
+	  2030 could be the first ice-free Arctic summer in human memory.
+	</div>
+	<div class="image-text" id="section5">
+Sudden state shifts like this occur when the climate crosses a critical threshold -- or tipping point.
+	</div>
+      </div>
+    </div>
+    <div class="super-container-background">
+    <div id="super-container">
+ 
+      <div class="article-container">
+	<div class="title-section-container">
+	<div class="titles-container">
+	  <div class="title bold">Paris is not enough</div>
+	  <div class="sub-title-1">
+	    Why uncertainty underpins the case for faster action
+	  </div>
+	  <div class="credit">By <span class="bold"><a href="https://twitter.com/hackingclimate" target="_blank">Sacha Saint-Leger</a></span></div>
+	</div>
+	<div class="sub-section italics quotation hidden">
+	    <span class="highlight-quotation" id="intro-quote">
+	      Some Earth system components, such as arctic sea ice and the polar ice sheets, may exhibit thresholds beyond which these self-reinforcing cycles can drive the component, or the entire system, into a radically different state.
+	      <p>Although the probabilities of these state shifts may be difficult to assess, their consequences could be high, potentially exceeding anything anticipated by climate model projections for the coming century.
+	      </p>
+	    </span>
+	    <p class="intro-quote-source">
+	      CSSR - Chapter 15: Potential Surprises: Compound
+	      Extremes and Tipping Elements
+	    </p>
+	  </div>
+	</div>
+
+	<div class="sections-container">
+	  <section>
+
+	    <div class="sub-title bold" id="chaos-title">Bringing Order to Chaos </div>
+
+	    <p>
+	      Most of us know why we're not very good at predicting things at the smallest scales of our universe: quantum theory tells us there's some randomness going on.
+	    </p>
+	    <p>
+	    But fewer of us know why our powers of prediction can be limited at much larger scales. Scales at which deterministic Newtonian physics should (in theory) kick in.
+	    </p>
+	    
+	    <p class="before-tweet">
+	    This is where the science of chaos fits in.
+	    </p>
+
+	    <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">&quot;chaos: a confused heap of mingle-mangle.&quot; -Robert Cawdrey&#39;s dictionary</p>&mdash; James Gleick (@JamesGleick) <a href="https://twitter.com/JamesGleick/status/24404656861?ref_src=twsrc%5Etfw">September 13, 2010</a></blockquote>
+	    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+	    
+	    <p class="after-tweet">
+	      Now chaos is quite a slippery concept. In his book Chaos: Making a New Science, the science historian James Gleick notes that none of the chaos scientists he interviewed 'could quite agree on [a definition of] the word itself'.
+	      So instead of trying to define it, let's have a look at a couple of examples.
+	    </p>
+	    <p>
+The <a href="https://en.wikipedia.org/wiki/Butterfly_effect" target="_blank">butterfly effect</a> is the classic example of chaos in action. If you're unfamiliar, it's the beautifully poetic notion that <span class="" id="butterflyEffectNotes">the flap of a butterfly's wings on one side of the world, can trigger a cascade of atmospheric events that, weeks later, can influence the weather on the other side.</span>
+	    </p>
+	    <p>
+	      And while that's extremely counter-intuitive, it helps explain why it's so hard to predict the weather more than a few days in advance. Because even though it operates at a large enough scale for Newtonian physics to make predictions, <span class="">our inability to measure every little butterfly-like effect means there'll always be some uncertainty involved.</span>
+	    </p>
+	    	    
+	    <div id='container' class='container-3'>
+	      <div id='graph'>
+		<svg id="g-lorentz" viewBox="0 0 400 300"></svg>
+	      </div>
+	      <div id='sections'>
+		<div class="lorenz-section" id="lorenz-section-1">
+		  Another cool example is the Lorenz attractor -- <span class="">keep scrolling</span> to see it in action.
+		</div>
+		<div class="lorenz-section" id="lorenz-section-2">
+		  The lorenz attractor is the name given to the solution to a set of maths equations. These equations were originally used to help predict the weather.
+		</div>
+		<div class="lorenz-section" id="lorenz-section-2b">
+More technically, it's a set of chaotic solutions to a system of equations that were once used to model atmospheric convection.
+		</div>
+		
+		<div class="lorenz-section" id="lorenz-section-3">
+		  Don't worry if that sounded like greek to you... What's important is the following: what appears for the moment to be one trajectory (or solution sketch) is actually two.
+		</div>
+		<div class="lorenz-section" id="lorenz-section-4">
+		  That's because the two trajectories started at two points that were imperceptibly close to each other (only 0.00001 units apart in the x-coordinate).
+		</div>
+		<div class="lorenz-section" id="lorenz-section-5">
+		  But if you wait long enough, you'll see that these two trajectories actually start to diverge, and significant differences start to appear.
+		</div>		
+		<div class="lorenz-section" id="lorenz-section-6">
+		   In other words, an imperceptibly small change in the starting point -- what mathematicians call initial conditions -- leads to a significantly different trajectory.
+		</div>
+		
+	      </div>
+	    </div>    
+	    <p>
+	      If there's one key takeaway from the above, it's the following: chaotic systems are systems where a very small change in starting (or current) conditions can lead to significant differences further down the line.
+	    </p>
+	    <p>
+	      Why does this matter? It turns out that our climate is a chaotic system. Yes, really. This means that very small changes to it can have large, unpredictable consequences as we extend time.
+	    </p>
+	    <p>
+	      Geeky meta point 🤓 : the consequences of this seemingly small insight are quite profound.
+	    </p>
+	    
+
+	  </section>
+
+	  <section>
+	    <div class="sub-title bold">What's the Worst That Could Happen?</div>
+	    <p> <a href="http://science.sciencemag.org/content/299/5615/2005" target="_blank"> In the words of the American geologist Richard Alley and his colleagues:</a>
+	    </p>
+
+	    <p class="highlight-quotation quote-padding-large">
+	    <span class="bold">Large, abrupt, and widespread climate changes with major impacts have occurred repeatedly in the past, when the Earth system was forced across thresholds...</span> were such an event to recur, the economic and ecological impacts could be large and potentially serious. <span class="bold">Unpredictability exhibited near climate thresholds in simple models shows that some uncertainty will always be associated with projections.</span>
+	    </p>
+
+	    <p>
+	     In other words, we know <span class="">there exist thresholds (or tipping points) above which the climate will respond in a large way to very small changes in conditions</span> -- what scientists call <span id="abruptClimateChangesNotes" class="highlight">abrupt climate changes.</span> But because of the climate's chaotic nature, <span class="">we don't have a good grasp of where these thresholds are </span>-- hence the "unpredictability exhibited near climate thresholds" part.
+	    </p>
+	    <p>
+	    What do these abrupt changes look like? <span class="highlight" id="unknownUnknownsNotes"> Some of them are likely still unknown to us.</span> But those we are aware of include ocean circulation shutdowns, <a target="_blank" href="https://dlc.dlib.indiana.edu/dlc/bitstream/handle/10535/4320/NPSocietal_Adaptation.pdf?sequence=1&isAllowed=y">monsoon failures</a>, <a href="https://www.sciencedirect.com/science/article/pii/S0012821X14007961" target="_blank">the acceleration of sea-ice loss</a>, runaway methane release from melting <span class="highlight" id="permafrostNotes">permafrost</span>, and any combination of factors leading to major ecosystem changes (such as the <span id="greenSaharaNotes" class="highlight">abrupt end of the Green Sahara some 5,500 years ago</span>).
+	    </p>
+	    
+	    <p>
+	      It's worth taking a closer look at a couple.
+	    </p>
+	  </section>
+	  
+	  <section>
+	    <div class="sub-title bold">The Day After Tomorrow</div>
+	    <p>
+	      Let's start with an important ocean circulation that's recently been making the headlines. Ocean circulation is an essential part of the Earth's climate system. In fact, <a href="https://www.annualreviews.org/doi/abs/10.1146/annurev-marine-010816-060415" target="_blank">it may be that most of the abrupt climate changes in our planet's history are due to sudden circulation shifts.</a>
+	    </p>
+	    <p>
+	      The best-known examples of these are the several dozen shutdowns of what scientists call
+	      <span id="amocNotes" class="highlight">the Atlantic Meridional Overturning Circulation (aka the Gulf Stream)</span>
+
+    during the last ice age -- for the movie buffs reading, <span id="dayAfterTomorrowNotes" class="highlight">this was the scenario that formed the basis for the film The Day After Tomorrow.</span>
+	    </p>
+	    <p>
+	      The AMOC's circulation transports heat around the globe like a conveyor belt, and if its movement were to stop, that heat would not get distributed. This would carry serious repercussions for weather and climate around the world.
+	    </p>
+	    <p>
+	      Apart from <a href="https://en.wikipedia.org/wiki/Shutdown_of_thermohaline_circulation" target="_blank">wreacking havoc on regional climates</a> (the Nordic countries, France, and the United Kingdom would suffer the worst effects), repercussions could include an increase in major floods and storms, a collapse of plankton stocks, and an oceanic anoxic event -- where large portions of the oceans become depleted in oxygen (a probable cause of past mass extinction events).
+	    </p>
+
+
+	    <p>The sobering news is that a couple of important studies have recently pointed to <a target="_blank" href="https://www.nature.com/articles/s41586-018-0006-5.epdf?referrer_access_token=NL56_45qV256CuItVqPIztRgN0jAjWel9jnR3ZoTv0OdzeJ18XkImxSDnyYEEsE8kZxiCFQRHXUDVk7z88DZuCVSpNT526jCYc7AolNWO0q1VuAzrHmqVEhSpPio75PuDkbmnZMCM7UNkijPz7lF85lllre35b36xIR2bFKP-N"> a 15-20% slowdown in the AMOC.</a> To put this in context, <a href="https://thinkprogress.org/climate-tipping-point-century-ahead-of-schedule-warns-scientist-06d633f968fc/"target="_blank"><span class="">this is a faster slowdown than models expected</span> -- it hasn't been this slow in 1500 years -- </a> and a stark reminder that uncertainty does not always work in our favour.
+	    </p>
+	    <p class="before-tweet">
+	      In light of these studies, the well-known climate scientist and communicator Michael Mann was asked to give his best guess for the odds of a full AMOC shutdown before 2050 and before 2100. His response:
+	    </p>
+
+	    <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Those numbers were for 2050. For 2100, I would say &gt; 50%.</p>&mdash; Michael E. Mann (@MichaelEMann) <a href="https://twitter.com/MichaelEMann/status/1001608493248536576?ref_src=twsrc%5Etfw">May 29, 2018</a></blockquote>
+	    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+	    <p class="after-tweet">
+And he's certainly not the only scientist who feels we are playing dice. Stefan Rahmstorf, world-renowned professor of ocean physics at the Potsdam Institute for Climate Impact Research (and co-author of one of the studies in question) recently expressed a similar sentiment:
+	    </p>
+
+
+	    <p class="highlight-quotation quote-padding-small">We know somewhere out there is a point where this current system is likely to break down...<span class="bold">We still don't know how far away or close to this tipping point we might be... This is uncharted territory.</span>
+	    </p>
+	  </section>
+
+	  
+	  <section>
+	    <div class="sub-title bold">The Sleeping Giant</div>
+	    <p>
+	      The warming trend in the Arctic is almost <a href="https://www.livescience.com/49172-arctic-heats-up-twice-as-quickly.html" target="_blank">twice as large as the global average in recent decades.</a> This is known as Arctic amplification.
+	    </p>
+	    <p>
+	      As the Arctic warms, the permafrost melts and the microbial breakdown of the organic carbon stored under it accelerates.
+	    </p>
+	    <p>
+	      This breakdown releases carbon dioxide and methane into the atmosphere which warms the planet further, causing more permafrost to melt, more emissions to be released, which leads to even more warming, melting and emissions... It's a vicious cycle, and there may be a tipping point where this self-reinforcing nature goes out of control.
+	    </p>
+
+	    <div class="image-container-1">
+	      <img class="essay-image" src="images/organic-carbon-short-2-copy.gif">
+	    </div>	    
+	    <p>
+	      And while methane is not currently contributing as much warming as carbon dioxide, it has a hidden danger; Molecule for molecule, methane traps more heat than carbon dioxide -- <a href="https://cleantechnica.com/2013/10/04/ipcc-warns-methane-traps-much-heat-thought/" target="_blank"> approximately 30 times more, depending on the time frame under consideration.</a>
+	    </p>
+	    <p>
+	      <a href="https://www.cosis.net/abstracts/EGU2008/01526/EGU2008-A-01526.pdf" target="_blank">An important 2008 study</a> estimated that at least 1,400 billion metric tons of carbon are locked up as methane and <span class="highlight" id="methaneHydratesNotes">methane hydrates</span> under the Arctic submarine permafrost, and that <span class="">the release of up to 50 billion tons is "highly possible for abrupt release at any time".</span>
+	    </p>
+	    <p>
+	    If this were to happen, <span class="highlight" id="methane12xNotes">the methane content of our planet's atmosphere would increase 12x. This would be equivalent to doubling the planet’s current level of carbon dioxide.</span> A shock of this magnitude would wreack total havoc on our ecosystems, <a href="https://www.theguardian.com/environment/2013/jul/24/arctic-thawing-permafrost-climate-change" target="_blank">triggering costs equivalent to the annual GDP of the global economy.</a>
+	    </p>
+	    <div class="image-container-1">
+	      <img class="essay-image" src="images/organic-carbon-short-1.gif">
+	    </div>
+	    <p class="gif-caption">
+	       By some estimates, there are at least 1,400 billion ton of carbon frozen in the permafrost (white). Since the industrial revolution humans have emitted around 375 billion tons (orange).
+	    </p>
+	    <p>While the full impact of the melting permafrost on our planet’s climate remains uncertain -- we just don’t know where the tipping points are -- we do know that we are effectively sitting on a sleeping giant; and the greater our planet’s temperature, the greater the risk he wakes up.
+	    </p>
+
+	    
+	  </section>
+	  <section class="hidden">
+	    <div class="sub-title bold">Discounting the Lives of Future Generations</div>
+	    <p>
+	      Abrupt climate changes are worrying.  But they aren't the only changes that matter. There are some equally important long-term effects (what scientists call <span class="highlight">amplifying or slow feedbacks</span>) associated with even small amounts of warming -- the most important being the melting of the ice sheets leading to higher sea-levels.
+	    </p>
+	    <p>
+	      And, while nearly all policy decisions ignore the consequences of sea-level rise past the year 2100, I've yet to hear a good argument as to why we shouldn't look further out. Do we honestly believe that the lives of future generations are worth less than our own?
+	    </p>
+	    <p>
+    Looking past 2100, <span class="highlight">paleo</span> sea level records suggest that our planet's current temperature -- which is around 1°C warmer than before the industrial revolution (yes I know climate scientists have a strange way of expressing temperature) -- may already represent a long-term commitment to more than 6 meters (20 feet) of global average sea-level rise.
+	    </p>
+	    <p>
+	       For instance, we know that <span class="highlight">during the Eemian -- the last inter-glacial period that occured around 125,000 years ago -- global average temperature was comparable to what it is today;</span> And that over time, <span class="highlight">ice-sheet melt caused sea-levels to reach 6-9m higher than today.</span> 
+	    </p>
+	    <p>
+If 1°C of warming has important consequences down the line, 2°C (the upper Paris agreement target) -- if sustained for a long enough period of time -- would completely transform our planet, bringing it very close to an ice-free state and putting most of our current civilization under water.
+	    </p>
+	    <p>
+	      To give you an idea of the scale of the transformation, <span class="highlight">a 10,000-year modeling study suggests that 2°C could represent a 10,000-year commitment to 25 meters (80 feet) of sea-level rise</span> (driven primarily by a loss of about one-third of the Antarctic ice sheet and three-fifths of the Greenland ice sheet).
+	    </p>
+	    <p>
+	      Even if you don't care much for thinking that far out, the immediate consequences are worth taking seriously. <span class="highlight">A sea-level rise of 1 metre or more by end of century is not inconceivable. </span> To put this in context, <a href="https://www.theguardian.com/environment/2015/aug/27/global-sea-levels-have-climbed-8cm-since-1992-nasa-research-shows" target="_blank">more than 150 million people currently live within 1 metre of the sea;</a> meaning that millions of families will be forced to relocate this century alone. And as bad as that sounds, sea-level rise won't even be the main reason behind forced relocation this century.
+	    </p>
+	  </section>
+	  <section>
+	    <div class="sub-title bold">Drought and the Akkadian Empire</div>
+	    <p class="highlight-quotation quote-padding-large">
+	      The large fields produced no grain</br>
+	      The flooded fields produced no fish</br>
+	      The watered garden produced no honey and wine....</br>
+	      <span class="q-source">--From “The Curse of Akkad,” written circa 4,000 BP</span>
+	    </p>
+	    <p>
+	      Around 4,300 years ago, Sargon of Akkad united the city-states of Mesopotamia (present-day Syria and Iraq) into the world's first empire.
+	    </p>
+	    <p>
+	      The Akkadian empire covered two regions: productive agricultural regions in the north and fertile plains between the Tigris and Euphrates rivers in the south.
+	    </p>
+	    <p>
+	      But after flourishing for 100 years, <a href="http://science.sciencemag.org/content/261/5124/995" target="_blank">it suddenly collapsed.</a>
+	    </p>
+	    <p>
+	      The city of Tell Leilan in the northern region was abandoned and covered with <a href="http://science.sciencemag.org/content/261/5124/995" target="_blank">one meter of windblown silt.</a> Refugees from the north moved to the southern lowlands to survive.
+	    </p>
+	    <p>
+	      For some time, researchers attributed the collapse to political disintegration and invasions.
+	    </p>
+	    <p>
+	      But we now know that <a href="https://www.ncdc.noaa.gov/abrupt-climate-change/Drought%20and%20the%20Akkadian%20Empire" target="_blank">climate factors beyond the control of the empire</a> played a large role in its demise. Specifically, <span class="highlight" id="paleoclimateNotes">paleoclimate</span> records indicate that the fall of the Akkadian empire coincided with a catastrophic drought.
+	    </p>
+	    <p>
+	      As the earth warms, extreme events like this will become more common. In fact, it's already happening. We know for instance that the recent political unrest in Syria coincided with what one expert called the <a href="https://climateandsecurity.org/2012/02/29/syria-climate-change-drought-and-social-unrest/" target="_blank">"worst long-term drought and most severe set of crop failures since agricultural civilizations began in the Fertile Crescent many millennia ago."</a>
+	    </p>
+
+	    <p>
+	      This drought had important consequences with potentially large knock-on effects: by late 2011, <span class="highlight" id="syrianCrisisNotes">more than a million people were living in food insecurity; As a result, more than 1.5 million people -- mostly farmers and individuals who worked on the land -- were forced to move to cities</span> in search of a better life.
+	    </p>
+	    <p class="hidden">
+	      While it’s impossible to quantify the precise effect this had on the political situation, there's no denying it added to the political instability. And since we don't know where the tipping point was, it’s not unreasonable to suggest that the crisis would not have occurred if these crop failures had not happened (forgive me for the string of negations).
+	    </p>
+	    <p>
+	      Rather than being a one-off freak event, all the evidence available to us suggests this is just the beginning. Even if we manage to meet the 2°C Paris Agreement Target, it's likely that the climate refugee crisis we will experience this century will surpass all known refugee crises in terms of scale.
+	    </p>
+	    <p>
+	      To put a number on it, an often quoted, but somewhat controverial estimate, is <a href="https://www.bbc.co.uk/news/magazine-23899195" target="_blank">200 million climate refugees by 2050 </a> (that's twenty times more refugees than are currently protected by the UNHCR).
+	    </p>
+	    <p>
+	    But <a href="https://reliefweb.int/report/world/climate-migrants-might-reach-one-billion-2050">the theoretical upper limit is much higher.</a> Why? Droughts kill more people than any other single weather-related catastrophe. They are only going to get worse. Over 1 billion people lack access to safe water. And demand for water is projected to increase by 30 per cent by 2030.</a>
+	    </p>
+	  </section>
+	  <section>
+	    <div class="sub-title bold">Pseudo Probabilities and Fallible Experts</div>
+	    <p class="before-tweet">
+Now that we have a good intuition for both chaos and some of the consequences associated with abrupt changes under a warming planet, it's worth exploring how we're attempting to quantify the risks we're taking.
+	    </p>
+	    <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">&quot;The odds of rare events are simply not computable.&quot; Nassim Taleb. &quot;Antifragility&quot;  <a href="http://t.co/MGCDCUhr">http://t.co/MGCDCUhr</a> <a href="https://twitter.com/hashtag/fb?src=hash&amp;ref_src=twsrc%5Etfw">#fb</a></p>&mdash; George J Peacock (@Peacockg) <a href="https://twitter.com/Peacockg/status/293031174882881537?ref_src=twsrc%5Etfw">January 20, 2013</a></blockquote>
+	    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+	    <p class="after-tweet">
+	      The inconvenient truth is that we're not able to properly quantify the risks, because, to borrow the words of Nassim Taleb, <span class="">the odds of rare events are simply not computable.</span>
+	    </p>
+	    
+	    <p>
+	      To get around this, <span id="expertJudgementIPCCNotes"  class="highlight"> the Inter-Governmental Panel on Climate Change (or IPCC) uses qualitative confidence statements -- statements with imprecise adjectives that at least partly depend on expert judgement -- to qualify their probability statements.</span>
+	    </p>
+
+	    <p>
+	      These are statements like, <span id="ipccRecentReportNotes" class="highlight">"[we have] a high confidence that [a shutdown of the AMOC this century] is very unlikely".</span>
+	    </p>
+
+	    <p class="hidden">
+	    To borrow a phrase from the American mathematician Cathy O'Neil, <a target="_blank" href="https://twitter.com/mc2maven/status/991548523635068930">models are opinions embedded in mathematics.</a> And while there's no doubt that some models are useful, we must be careful not to confuse embedded opinions with infallible laws.
+	    </p>
+	    <p>
+    While this may sound reasonable at first glance, it suffers from a fundamental flaw: the literature on expertise tells us that <span class="">most experts are actually pretty bad at quantifying uncertainty about things from their own field.</span>
+	    </p>
+	    <p>
+	    In political forecasting, for example, the political scientist <span id="tetlockNotes" class="highlight">Philip Tetlock has found that the average expert’s predictions are no better than a random guess.</span>
+	    </p>
+	    <p>
+	      More relevantly, Roger Cooke -- lead author of the chapter on risk and uncertainty in the IPCC's Fifth Assessment Report -- has found that <span id="pseudoProbNotes" class="highlight">when experts (in any field) quantify their uncertainty about things from their field that are known after the event, nearly 75% are not statistically accurate.</span>
+	    </p>
+
+	  </section>
+	  <section>
+	    <div class="sub-title bold">Embracing the Precautionary Principle</div>
+	    <p>
+	      So if we can't quantify the risks we are taking, and we can't place too much weight on the uncertainty projections of experts, what can we do?
+	    </p>
+	    <p>
+	      Some have attempted to use uncertainty to justify inaction. If it's not already obvious to you why this line of argument is fallacious, ask yourself the following: In the face of uncertainty, is it wise to ignore risks at the catastrophic end of the distribution of possible outcomes?
+	    </p>
+	    <p>
+	      Put another way, <span class="">when low-probability, high-impact threats arise, should we try our best to take actions that reduce this threat, or stand around hoping for the best?</span>
+	    </p>
+	    <p>
+	      What's interesting is that those who use uncertainty to justify inaction on climate, often use it to justify the exact opposite in other fields.
+	    </p>
+	    <p>
+	    In the days following 9/11, for instance, Vice President Dick Cheney famously said, "If there is a one percent chance that Pakistani scientists are helping Al Qaeda build or develop a nuclear weapon, we have to treat it as a certainty in terms of our response."
+	    </p>
+
+
+	    <p>
+	      Applied to climate change, this sort of reasoning looks like this: If there is a one percent chance that climate change will cause us to cross tipping points that will cause irreversible damage to our species, we have to treat is as a certainty in terms of our response.
+	    </p>
+
+	    <p>
+	      A form of this argument is well-articulated in a <a href="http://fooledbyrandomness.com/climateletter.pdf" target="_blank">letter</a> written by complexity scientist Joseph Norman and his colleagues:
+	    </p>
+	      <span class="highlight-quotation">We have only one planet. This fact radically constrains
+		the kinds of risks that are appropriate to take at a large
+		scale. <span class="bold">Even a risk with a very low probability becomes
+		unacceptable when it affects all of us – there is no
+		  reversing mistakes of that magnitude.</span>
+		</span>
+	    <p>They add: </p>
+	      <span class="highlight-quotation">
+		<p>
+		  It has been shown that in any system fraught
+		  with <span class="highlight highlight-white" id="opacityNotes">opacity</span>, <span class="bold">harm is in the dose rather than in the nature
+		  of the offending substance: it increases nonlinearly
+		  to the quantities at stake...
+		</p>
+		<p>
+		  While some amount of pollution is inevitable,
+		  high quantities of any pollutant put us at a rapidly
+		  increasing risk of destabilizing the climate, a system that
+		  is integral to the biosphere. Ergo, we should build down
+		  CO<sub>2</sub> emissions, even regardless of what climate-models
+		  tell us.
+		</p>
+	      </span>
+	    <p>In other words:</p>
+	    <p>
+	      We know that <a href="https://www.bloomberg.com/graphics/2015-whats-warming-the-world/" target="_blank">greenhouse gases are causing the temperature of our planet to rise, </a>that <a href="https://www.epa.gov/ghgemissions/overview-greenhouse-gases" target="_blank">carbon dioxide is the main offending substance,</a> and that the climate's response is unpredictable and non-linear to the dose of that substance. Since we only have one planet, even a risk with a very low probability becomes unacceptable when it affects us all.
+	    </p>
+	    <p>	  
+    <span class="">It follows that we need to reduce emissions as quickly as we can, regardless of whether or not we can accurately quantify the risks associated with continued emissions.</span>
+	    </p>
+	    <p>
+	      Viewed this way, <span class="">uncertainty actually underpins the case for immediate and drastic action.</span>
+	    </p>
+	  </section>
+
+	  <section>
+	      <div class="sub-title">Applying the Precautionary Principle</div>
+	      <p>
+		Once you've deeply internalized this, it changes the whole way you think about the climate problem. The most important question then becomes: what's an appropriately ambitious target for the maximum amount of carbon dioxide we should allow in our atmosphere?
+		</p>	      
+		<p id="hansen-quotation-before">
+		  Back in 2008, in a paper entitled <a target="_blank" href="https://arxiv.org/vc/arxiv/papers/0804/0804.1126v2.pdf">Target Atmospheric CO<sub>2</sub>: Where Should Humanity Aim?</a>, James Hansen -- former director of the NASA Goddard Institute for Space Studies in New York -- and his colleagues took a hard look at <span class="highlight" id="paleoclimateNotes2">paleoclimate</span> evidence and ongoing climate changes in an attempt to answer this exact question. Their conclusion:
+		</p>
+
+		<span class="highlight-quotation hidden">If humanity wishes to preserve a planet similar to that on which civilization developed and to which life on Earth is adapted, paleoclimate evidence and ongoing climate change suggest that <span class="bold">carbon dioxide will need to be reduced from it's current 385ppm to at most 350 ppm.</span>
+		</span>
+		<span class="highlight-quotation"><span class="bold">We suggest an initial objective of reducing atmospheric CO<sub>2</sub> to 350ppm [<span id="ppmNotes" class="highlight highlight-white">parts-per-million </span>]</span>, with the target to be adjusted as scientific understanding and empirical evidence of climate effects accumulate.
+
+		  <p><span class="bold">Although a case already could be made that the eventual target may need to be lower, the 350
+		  ppm target is sufficient to qualitatively change the discussion and drive fundamental changes in
+		    energy policy.</span>
+		  </p>
+
+		</span>	    
+	    </section>
+
+	    <div class="notes">[Add annotations to show when we crossed 350ppm. Highlight where we are now]</div>
+
+
+	    <section>
+	      <div class="sub-title">Why 350ppm? And how does it relate to the Paris Targets?</div>
+
+		<p>
+		  To compare 350ppm to the Paris Targets we need to <span class="highlight" id="co2tempNotes">relate carbon dioxide levels to global temperature.</span>
+		</p>
+		<p>
+		  It turns out that 350ppm keeps global warming close to 1°C above pre-industrial levels (our planet's current temperature); this puts us within striking distance of the natural temperatures experienced since the end of the <a href="https://en.wikipedia.org/wiki/Last_glacial_period" target="_blank">last glacial period</a>, 11,700 years ago.
+		</p>	      
+		<p>
+		  In comparison, the Paris Targets — to limit global warming to 2°C (and to try to keep close as possible to 1.5°C) — put us far above this natural range.
+		</p>
+		<p class="before-holo-graph">
+		  <span class="">A picture of the last 12,000 years of our planet's temperature</span> makes this clearer:
+		</p>
+
+		<div class="svg-container">
+		  <svg class="svg" id="svg-holocene-temp" viewBox="0 0 400 300"></svg>
+		</div>
+
+		<p class="after-holo-graph">
+		As you can see, the Paris Targets put us fairly deep into unknown territory — a territory full of low-probability high-impact risks. In comparison, 350ppm keeps our planet much closer to the natural state in which human civilization developed (and to which it is adapted).
+	      </p>
+
+
+		<p class="">
+		  In Hansen's own words:
+		</p>
+
+		 <span class="highlight-quotation">
+		     <span class="bold">A danger of 1.5 or 2°C targets is that they are far above the
+		   Holocene [the current inter-glacial period's] temperature range.</span> If such temperature levels are
+		   allowed to long exist they will spur “slow” amplifying feedbacks
+		   which have potential to run out of humanity’s
+		     control.
+		     <p>
+
+		   The most threatening slow feedback likely
+		   is ice sheet melt and consequent significant sea level rise, as
+		   occurred in the Eemian [the last interglacial period where sea-levels reached 6-9m higher than today], but there are other risks in pushing
+		   the climate system far out of its Holocene range. <span class="bold">Methane
+		   release from thawing permafrost and methane hydrates is another
+		   potential feedback...</span>
+		     </p>
+		 </span>	       
+
+	      <div>
+		<p class="hidden-notes">
+		  <span class="highlight"> 1°C is also in line with our best estimates for the temperature of the previous inter-glacial period (a period known as the Eemian that occurred between 130 and 115 thousand years ago).
+		  </span>
+		</p>
+		<p class="hidden-notes"><span id="humanCivilizationNotes " class="highlight">In other words, <span class="bold"> by limiting global warming to 1°C, 350ppm keeps our planet both within the temperature range of the previous inter-glacial period and close to the state in which human civilization developed.</span>
+		</p>
+		<p class="hidden-notes"> 
+		  It's important to note that even 350ppm might not be enough to reverse <span class="highlight">slow feedback effects like ice sheets melting.</span> <span class="highlight">During the Eemian, for example, ice-sheet melt caused sea-levels to reach 6-9m higher than today.</span> This matters because <span class="highlight">800 million people currently live 9m or less above sea-level (and this number is expected to keep growing).</span>
+		</p>
+		<p class="hidden-notes"> 
+		However, in practice such a sea-level rise would take at least several hundred years. During that time we would be able to re-evaluate effects on ice sheets and other variables (and if necessary reduce carbon dioxide levels further before this became a problem). <span class="bold">The important thing is that we'd be within striking distance of the range of natural temperatures experienced by our ancestors.</span>
+		</p>
+	      </div>
+
+	    </section>
+	    <section>
+	      <div class="sub-title">So where are we now?</div>
+	      <div class="svg-container">
+		<svg class="svg" id="svg-historical-emissions" viewBox="0 0 400 300"></svg>
+	      </div>
+	      <p class="after-where-are-we-graph">
+		In April of this year, the Mauna Loa Observatory recorded its first-ever carbon dioxide reading in excess of 410 parts-per-million. This is the highest CO<sub>2</sub> level in the 800,000 years for which we have good data.
+	      </p>
+
+	    </section>
+	    <section class="final-scrolly-section"> 
+	      <div class="sub-title" id="final-scrolly-title">And where are we going?&emsp;<span class="unbold"> (Keep Scrolling)</span></div>
+	      <div id="container" class="container-2">
+		<div id='graph' class="graphy">
+		   <svg id="svg-ppm" viewBox="0 0 416 300"></svg>
+	       </div>
+
+		<div id='sections'>
+		 <div class="sb">
+		 </div>
+
+		 <div class="sb">
+		   <p>
+		     According to Hansen's calculations, if emissions stay constant, we will reach <span class="zero-line-text">545 ppm</span> by the end of this century.
+		   </p>
+		 </div>
+		 <div class="sb">
+		   <span class=""> Reducing emissions by 3% a year — from 2021 onwards — brings us to <span class="minus3-line-text">415 ppm</span></span>
+		 </div>
+		 <div class="sb">
+		   <span class=""> And reducing emissions by 6% a year — from 2021 onwards — gets us back to <span class="minus6-line-text">385 ppm</span></span>
+		 </div>
+		</div>
+	      </div>
+	    </section>
+	    <div class="article-container" id="ac2">
+	      <span class="highlight" id="hansenCalculationNotes">See here for more on these calculations.</span>
+	      <section>
+		<div class="sub-title">Is 350ppm Still Possible?</div>
+		<p>
+		  As you can see, even with immediate and drastic cuts in global carbon emissions, getting back to 350ppm seems like an impossible task.
+		</p>
+		<p>
+		Short of putting the global economy on pause, it seems unlikely we'll be able to reduce global emissions by more than 3% a year from 2021 onwards, and even that only gets us to 415ppm by the end of this century.
+		</p>
+		<p>
+		  To put things in perspective, despite all the recent good news around renewables, <a target="_blank" class="" href="https://www.carbonbrief.org/analysis-global-co2-emissions-set-to-rise-2-percent-in-2017-following-three-year-plateau"> global carbon emissions actually increased by 2% last year.</a>
+		</p>
+		<p>
+		  So if emissions cuts by themselves won't be enough, is there another lever we can pull on? Clearly, there are only two ways to reduce the concentration of carbon dioxide in the atmosphere: (1) stop emitting (and let nature slowly absorb the excess), or (2) take steps to proactively remove CO<sub>2</sub> from the atmosphere. Since we've established (1) by itself won't be enough,  we're left with (2).
+		</p>
+		<p>
+		  In other words, if we want to stand a chance of getting back to 350 by the end of this century, <span class="">we have no choice but to help nature suck it back out of the atmosphere. </span>
+		</p>
+
+		<p>
+		  Now you might ask: why don't we forget about emissions cuts and just focus on sucking it up? It's not a bad question, but it turns out that even with the most optimistic cost assumptions, the financial burden of such an endeavor would simply be too great for younger generations to shoulder (I promise we'll explore this in greater deal in the next chapter of this essay series, but for now you'll have to take my word for it).
+		</p>
+		<p>
+		To give you a small sense of why:
+		</p>
+		
+		     
+		<p>
+		  <span class="highlight" id="extractionNotes">If emissions stay constant from here on in, we'll need to remove 2550 billion tons of CO<sub>2</sub> from the atmosphere by the end of this century to get back to 350ppm</span>— that's a monstrously huge amount, equivalent to 60 years worth of current emissions!
+		</p>
+		<p>
+		  But <span class="highlight" id="extractionNotes">if we can commit to emissions cuts of 3% a year from 2021 onwards, that number falls by a factor of 3, to 870 billion tons.</span> That's 20 years worth of current emissions (still huge but <span class="highlight" id="removalNotes3">mathematically just about possible with the right global coordination</span>).
+		</p>
+
+		<p class="before-removal-graph">
+		  Here's a neat picture summarizing the above (I've included the 6% reduction in emissions scenario for the sake of completion, but you should notice that the biggest gains come from going from 0 to 3):
+		</p>
+		
+		<div class="svg-container" id="carbon-removal-viz-container" >
+		  <svg class="svg" id="svg-carbon-removal-blocks" viewBox="0 0 400 300"></svg>
+		</div>
+
+		<p>
+		  How much does it cost to remove CO<sub>2</sub> from the atmosphere on this sort of scale? How far can natural methods such as planting trees take us? Are there technological solutions worth exploring? We'll explore all these questions (and more) together — in detail — in the second part of this essay series.
+		</p>
+		<p>
+		  One thing is clear though: this is not an either/or question. <span class="bold">If we deeply care about minimizing the existential threat to our species, we'll need to commit to both legally binding emissions cuts and significant investments in carbon removal solutions.</span>
+		</p>
+		
+		<p>
+		  To conclude, I'm a strong believer in the adage that <a href="http://worrydream.com/ExplorableExplanations/" target="_blank">good journalism should show the reader how to think, not what to think.</a> So rather than being restricted to my assumptions, at the end of part two you'll be free to question them, and change them, in order to better understand the landscape of possible solutions. <a href="https://twitter.com/hackingclimate" target="_blank">Stay tuned.</a>
+		</p>
+	      </section>
+	      <section class=".credits">
+		<div class="sub-title">Credits</div>
+		<p>Thanks to Tom Saint-Leger, Felix Saint-Leger, Matt Daniels, and Ana Gabriella Fasold-Bergès for reading drafts of this.</p>
+		<p>
+		  Credit for the <a href="https://www.nasa.gov/image-feature/sea-ice-in-the-greenland-sea/" target="_blank">intro image</a> belongs to NASA/Jeff Schmaltz, MODIS Land Rapid Response Team, NASA GSFC.
+		</p>
+		<p>
+		  The data used to create the line graphs come from Hansen, Sato, Kharecha, von Schuckmann, et al's 2017 paper: <a href="https://www.earth-syst-dynam.net/8/577/2017/" target="_blank">Young people's burden: requirement of negative CO2 emissions.</a> The datasets can be found <a href="https://zenodo.org/record/823301#.W2CdsthKhsM" target="_blank">here.</a>
+		</p>
+	      </section>
+	      
+	    </div>
+	</div>
+      </div>
+    </div>
+    </div>
+    <script>
+      // <img class="intro-image" id="greenland-sea-ice" src="images/greenland_sea_ice.jpg"/>
+      loadImage();
+      function loadImage() {
+      var img = new Image(),
+      x = document.getElementById("greenland-sea-ice");
+      img.onload = function() {
+      x.src = img.src;
+      };
+      img.src = window.innerWidth < 500 ? "images/greenland_sea_ice_mobile.jpeg" : "images/greenland_sea_ice.jpg";
+      }
+    </script>
+  </body>
+</html>
