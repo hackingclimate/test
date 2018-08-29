@@ -1,0 +1,72 @@
+
+body {
+//    font-family: Gill Sans;
+    font-family: 'Source Sans Pro', serif;  
+   padding: 2rem;
+   margin: 0 auto;
+   max-width: 400px;
+   font-weight: 200;
+   background: #FFFAF0;
+}
+
+section {
+   margin-bottom: 2rem;
+}
+
+header {
+   font-weight: 600;
+}
+
+.hidden {
+    display: none;
+}
+
+.section0 {
+   text-align: center;
+}
+
+.title {
+   font-size: 3rem;
+   padding: 0;
+   margin: 0;
+//   padding-bottom: 0.5rem;
+}
+
+.sub-title {
+    font-size: 1rem;
+    max-width: 300px;
+    text-align: left;
+}
+
+.intro {
+    font-size: 0.9rem;
+}
+
+.about-me {
+    font-size: 0.9rem;
+}
+
+.quote {
+   font-style: italic;
+}
+
+.quotation {
+    padding-bottom: 1rem;
+}
+
+.highlight {
+   color: rgb(255,56,0);
+}
+a {
+    color: rgb(255,56,0);
+    
+
+}
+
+.head {
+   margin: 0 auto;
+   text-align: center;
+   padding-top: 0rem;
+   padding-bottom: 2rem;
+}
+      
